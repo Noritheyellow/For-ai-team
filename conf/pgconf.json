@@ -1,0 +1,7 @@
+{
+    "host": "125.129.140.147",
+    "port": 8000,
+    "dbname": "mimic3",
+    "user": "postgres",
+    "password": "1q2w3e4r!@"
+}

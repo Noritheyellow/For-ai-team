@@ -1,0 +1,5 @@
+outs:
+- md5: dbb10e0907101024a02965b175c43632
+  size: 91848
+  hash: md5
+  path: intersectDemoWave.parquet.gzip
