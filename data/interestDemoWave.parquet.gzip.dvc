@@ -1,0 +1,5 @@
+outs:
+- md5: 9d180a739bc1396296557f262c913b15
+  size: 6958
+  hash: md5
+  path: interestDemoWave.parquet.gzip
