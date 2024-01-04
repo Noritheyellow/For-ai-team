@@ -1,0 +1,4 @@
+[core]
+    remote = dvc_test
+['remote "dvc_test"']
+    url = ../../DataWarehouse/dvc_test
