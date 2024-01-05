@@ -40,4 +40,4 @@ mimic_join = pd.merge(left=mimic_table, right=record_list, how='inner', on=['sub
 mimic_join = mimic_join.loc[(mimic_join['recordtime'] >= mimic_join['admittime'])&(mimic_join['recordtime'] < mimic_join['dischtime'])].sort_values(by=['subject_id', 'recordtime']).reset_index(drop=True)
 mimic_join.sort_values(by='subject_id')
 
-mimic_join.to_parquet(path='../../data/intersectDemoWave.parquet.gzip', engine='pyarrow', compression='gzip')
+mimic_join.to_parquet(path='/root/Workspace/For-ai-team/data/intersectDemoWave.parquet.gzip', engine='pyarrow', compression='gzip')
