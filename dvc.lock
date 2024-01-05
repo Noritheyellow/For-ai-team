@@ -1,13 +1,13 @@
 schema: '2.0'
 stages:
   prepare1:
-    cmd: python3 src/python/23122600_prepare.py
+    cmd: python3 src/python/23122601_prepare.py
     deps:
     - path: conf/pgconf.json
       hash: md5
       md5: cacfd9e9a7e290009a4c25c6c7bcdaf5
       size: 129
-    - path: src/python/23122600_prepare.py
+    - path: src/python/23122601_prepare.py
       hash: md5
       md5: 9da95b346dc895d5b58e2696d5c4f63c
       size: 1813
@@ -16,3 +16,19 @@ stages:
       hash: md5
       md5: dbb10e0907101024a02965b175c43632
       size: 91848
+  prepare2:
+    cmd: python3 src/python/23122602_prepare.py data/intersectDemoWave.parquet.gzip
+    deps:
+    - path: data/intersectDemoWave.parquet.gzip
+      hash: md5
+      md5: dbb10e0907101024a02965b175c43632
+      size: 91848
+    - path: src/python/23122602_prepare.py
+      hash: md5
+      md5: 401de95869d52900dc03e03c8b72a260
+      size: 1164
+    outs:
+    - path: data/interestDemoWave.parquet.gzip
+      hash: md5
+      md5: 16a98f5ab9f790c027ba40f35adcf5d6
+      size: 20371

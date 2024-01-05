@@ -1,8 +1,15 @@
 stages:
   prepare1:
-    cmd: python3 src/python/23122600_prepare.py
+    cmd: python3 src/python/23122601_prepare.py
     deps:
     - conf/pgconf.json
-    - src/python/23122600_prepare.py
+    - src/python/23122601_prepare.py
     outs:
     - data/intersectDemoWave.parquet.gzip
+  prepare2:
+    cmd: python3 src/python/23122602_prepare.py data/intersectDemoWave.parquet.gzip
+    deps:
+    - data/intersectDemoWave.parquet.gzip
+    - src/python/23122602_prepare.py
+    outs:
+    - data/interestDemoWave.parquet.gzip
