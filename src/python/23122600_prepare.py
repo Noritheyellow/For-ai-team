@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../../Dataset-Management-Library/mimic3wfdb')
+sys.path.append('../Dataset-Management-Library/mimic3wfdb')
 import json
 import argparse
 import numpy as np
@@ -9,7 +9,7 @@ import wfdb_util as wu
 from itertools import starmap
 
 
-with open('../../Dataset-Management-Library/pgconf.json') as f:
+with open('../Dataset-Management-Library/pgconf.json') as f:
     pg_conf = json.load(f)
 
 conn = pg.connect(
@@ -31,7 +31,7 @@ cursor.close() # confirm
 mimic_table = pd.DataFrame(result, columns=['subject_id', 'gender', 'age', 'admittime', 'dischtime', 'weight_kg', 'height_inches', 'height_cm', 'bmi'])
 mimic_table = mimic_table.astype({'subject_id':'uint16', 'age':'uint8', 'weight_kg':'float32', 'height_inches':'float32', 'height_cm':'float32', 'bmi':'float32'})
 
-record_list = wu.get_record_df('../../DataLake/mimic-iii_wfdb/')
+record_list = wu.get_record_df('../DataLake/mimic-iii_wfdb/')
 record_list = record_list.query('record_name.str.contains("n")!=True').reset_index(drop=True)
 record_list['recordtime'] = [pd.to_datetime(dt, format='%Y-%m-%d-%H-%M') for dt in map(lambda rec: rec[-1][8:-4], record_list.values)]
 record_list['subject_id'] = record_list['subject_id'].astype(np.uint16)
