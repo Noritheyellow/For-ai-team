@@ -5,4 +5,4 @@ stages:
     - conf/pgconf.json
     - src/python/23122600_prepare.py
     outs:
-    - data/prepared1
+    - data/intersectDemoWave.parquet.gzip
